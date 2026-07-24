@@ -1,3 +1,4 @@
+#!/bin/bash
 echo -n "How many key-pairs would you like to generate: "
 read count
 
