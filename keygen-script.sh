@@ -1,3 +1,10 @@
+echo -n "How many key-pairs would you like to generate: "
+read count
+
+mkdir -p "pub-keys/"
+
+for ((i=1;i<=count;i++))
+do
 echo -n  "Enter a name: "
 read name
 echo -n "Enter an email: "
@@ -13,6 +20,6 @@ Passphrase: ''
 %commit
 EOF
 echo "Key pair generated"
-gpg --export --armor --output ${email} >> "${name}-public.txt"
-
+gpg --armor --output "pub-keys/${name}-public.txt" --export ${email}
+done
 
